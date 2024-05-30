@@ -7,3 +7,6 @@ Content-Type: application/json
 }
 
 ###
+GET http://localhost:3000/states
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNocmlzdG9waGVyX3BoaWxsaXBzIiwiaWF0IjoxNjkxNzg4MzA0fQ.3dIz3eExTShdfkiCLX44Qbx9qP6d7ViGGLo_Vx6394I
+###

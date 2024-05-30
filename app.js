@@ -70,3 +70,21 @@ app.post('/login', async (request, response) => {
     }
   }
 })
+
+// API 2
+app.get('/states', authenticateToken, async (request, response) => {
+  const getStatesQuery = `
+      SELECT *
+      FROM state;`
+  const getStates = await db.all(getStatesQuery)
+  const convertDBObjectToResponseObject = dbObject => {
+    return {
+      stateId: dbObject.state_id,
+      stateName: dbObject.state_name,
+      population: dbObject.population,
+    }
+  }
+  response.send(
+    getStates.map(eachState => convertDBObjectToResponseObject(eachState)),
+  )
+})
